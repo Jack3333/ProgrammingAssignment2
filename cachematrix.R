@@ -1,10 +1,23 @@
-## Put comments here that give an overall description of what your
-## functions do
+## The purpose of this pair of functions is to avoid duplicating the 
+## calculations involved in inverting a matrix.  If one requires the inverse  
+## an invertible matrix for which the inverse has already been found, this
+## pair of functions enable one to retrieve the previously determined
+## inverse from a cache.
 
-## Write a short comment describing this function
+## This function provides
 
-makeCacheMatrix <- function(x = matrix()) {
-
+makeCacheMatrix <- function(x = numeric()) {
+      inv <- NULL
+      set <- function(y) {
+            x <<- y
+            inv<<- NULL
+      }
+      get <- function() X
+      setinv <- function(solve)   inv<<- solve
+      getinv - function() inv
+      list (set = set, get = get,
+            setinv = setinv,
+            getinv = getinv)
 }
 
 
